@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    /* Couleurs de base */
+    --background: 0 0% 100%;
+    --foreground: 216 100% 19%; /* Bleu foncé CODEM #001F60 */
+    
+    /* Cartes et popovers */
+    --card: 0 0% 100%;
+    --card-foreground: 216 100% 19%; /* Bleu foncé CODEM */
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 100% 19%; /* Bleu foncé CODEM */
+    
+    /* Couleur primaire - Orange CODEM */
+    --primary: 20 96% 48%; /* Orange CODEM #F55D0A */
+    --primary-foreground: 0 0% 100%; /* Blanc pour le texte sur orange */
+    
+    /* Couleur secondaire - Gris clair */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 216 100% 19%; /* Bleu foncé CODEM */
+    
+    /* Couleur muted - Gris */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16.3% 46.9%;
+    
+    /* Couleur accent - Jaune CODEM */
+    --accent: 36 94% 54%; /* Jaune-Orangé CODEM #F7A81B */
+    --accent-foreground: 216 100% 19%; /* Bleu foncé CODEM */
+    
+    /* Couleurs destructives */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Bordures et inputs */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 20 96% 48%; /* Orange CODEM pour le focus */
+    
+    /* Radius */
+    --radius: 0.75rem; /* Un peu plus arrondi pour un look premium */
+    
+    /* Couleurs de graphiques */
+    --chart-1: 20 96% 48%; /* Orange CODEM */
+    --chart-2: 36 94% 54%; /* Jaune CODEM */
+    --chart-3: 216 100% 19%; /* Bleu CODEM */
+    --chart-4: 216 80% 35%; /* Bleu clair */
+    --chart-5: 25 95% 50%; /* Orange-Rouge */
+  }
+
+  .dark {
+    /* Couleurs de base en mode sombre */
+    --background: 216 100% 19%; /* Bleu foncé CODEM */
+    --foreground: 210 40% 98%;
+    
+    /* Cartes et popovers */
+    --card: 217.2 80% 12%; /* Bleu très foncé */
+    --card-foreground: 210 40% 98%;
+    --popover: 217.2 80% 12%;
+    --popover-foreground: 210 40% 98%;
+    
+    /* Couleur primaire - Orange CODEM */
+    --primary: 20 96% 48%; /* Orange CODEM - même en dark */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Couleur secondaire */
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    
+    /* Couleur muted */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    /* Couleur accent - Jaune CODEM */
+    --accent: 36 94% 54%; /* Jaune-Orangé CODEM - même en dark */
+    --accent-foreground: 216 100% 19%; /* Bleu foncé CODEM */
+    
+    /* Couleurs destructives */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* Bordures et inputs */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 20 96% 48%; /* Orange CODEM pour le focus */
+    
+    /* Couleurs de graphiques */
+    --chart-1: 20 96% 58%; /* Orange CODEM plus clair */
+    --chart-2: 36 94% 64%; /* Jaune CODEM plus clair */
+    --chart-3: 216 80% 40%; /* Bleu CODEM plus clair */
+    --chart-4: 216 60% 50%; /* Bleu encore plus clair */
+    --chart-5: 25 95% 60%; /* Orange-Rouge plus clair */
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Mapbox styles */
+@import 'mapbox-gl/dist/mapbox-gl.css';
+
+/* Custom scrollbar - Style CODEM */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(20 96% 48%), hsl(36 94% 54%));
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(20 96% 40%), hsl(36 94% 46%));
+  background-clip: padding-box;
+}
+
+/* Smooth animations */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Amélioration des transitions globales */
+button, a, input, textarea, select {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Scrollbar fine pour les filtres */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* Style premium pour les ombres */
+.shadow-codem {
+  box-shadow: 0 10px 40px -10px rgba(0, 31, 96, 0.15),
+              0 4px 10px -4px rgba(245, 93, 10, 0.1);
+}
+
+.shadow-codem-lg {
+  box-shadow: 0 20px 60px -15px rgba(0, 31, 96, 0.2),
+              0 8px 20px -8px rgba(245, 93, 10, 0.15);
+}
+
+/* Gradient texte CODEM */
+.gradient-codem {
+  background: linear-gradient(135deg, hsl(20 96% 48%), hsl(36 94% 54%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animation de chargement CODEM */
+@keyframes shimmer-codem {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer-codem {
+  animation: shimmer-codem 2s infinite linear;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 31, 96, 0.05) 0%,
+    rgba(245, 93, 10, 0.1) 50%,
+    rgba(0, 31, 96, 0.05) 100%
+  );
+  background-size: 1000px 100%;
+}
+
