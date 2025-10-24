@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: codem-frontweb
+    env: node
+    region: frankfurt # ou oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.17.0
+      - key: NODE_ENV
+        value: production
+

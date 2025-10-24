@@ -18,7 +18,9 @@ Un site web moderne et dynamique pour CODEM, entreprise de déménagement au Con
 - **Zustand** - Gestion d'état légère et performante
 - **TanStack Query** - Gestion des données et cache
 - **Mapbox GL JS** - Cartes interactives et calcul d'itinéraires
-- **Lucide React** - Icônes modernes
+- **Phosphor Icons** - Bibliothèque d'icônes premium
+- **React Hook Form + Zod** - Gestion de formulaires et validation
+- **React Day Picker** - Sélecteur de dates premium
 
 ## ✨ Fonctionnalités
 
@@ -29,12 +31,15 @@ Un site web moderne et dynamique pour CODEM, entreprise de déménagement au Con
 - Présentation des services avec tarifs
 - Design responsive et animations fluides
 
-### Formulaire de Réservation
-- Sélection du type de déménagement (studio, appartement, maison, bureau)
-- Saisie des adresses de départ et d'arrivée
-- Choix de la date
-- Configuration des étages
-- Calcul de devis instantané
+### Formulaire de Réservation Multi-étapes
+- **Étape 1** : Type de déménagement (résidentiel, commercial, entreposage)
+- **Étape 2** : Adresses de départ et d'arrivée avec suggestions
+- **Étape 3** : Choix de la date avec calendrier premium
+- **Étape 4** : Sélection détaillée des objets (70+ items organisés en 13 catégories)
+- **Étape 5** : Services additionnels (emballage, montage/démontage, etc.)
+- **Étape 6** : Récapitulatif et confirmation
+- Calcul automatique du volume et estimation du prix en FCFA
+- Validation complète avec React Hook Form et Zod
 
 ### Carte Interactive (Mapbox)
 - Visualisation des points de départ et d'arrivée
@@ -51,8 +56,8 @@ Un site web moderne et dynamique pour CODEM, entreprise de déménagement au Con
 
 1. Clonez le repository
 ```bash
-git clone <votre-repo>
-cd demenagement-pro
+git clone https://github.com/Christlpc/Codem-FrontWeb.git
+cd Codem-FrontWeb
 ```
 
 2. Installez les dépendances
@@ -109,24 +114,35 @@ Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
 ## 🎨 Personnalisation
 
-### Couleurs
-Modifiez les couleurs dans `tailwind.config.ts` et `app/globals.css` :
-- Primary: Vert (#10b981) - Couleur principale de la marque
-- Secondary: Gris clair - Backgrounds secondaires
-- Accent: Couleurs d'accentuation
+### Couleurs CODEM
+Les couleurs sont configurées dans `tailwind.config.ts` et `app/globals.css` :
+- **Primary (Orange)** : `#F55D0A` - Boutons et CTAs
+- **Secondary (Bleu foncé)** : `#001F60` - Texte et identité
+- **Accent (Jaune-Orangé)** : `#F7A81B` - Mise en valeur et accents
+- Mode sombre automatique avec les variantes appropriées
 
 ### Animations
 Les animations sont configurées dans `tailwind.config.ts` et utilisent Framer Motion.
 
 ## 🚢 Déploiement
 
-### Vercel (Recommandé)
-```bash
-npm run build
-vercel deploy
-```
+### ⭐ Vercel (FORTEMENT RECOMMANDÉ - Gratuit)
 
-### Autres plateformes
+**La meilleure option pour Next.js** - Simple, rapide et gratuit !
+
+1. Allez sur [vercel.com](https://vercel.com)
+2. Connectez votre compte GitHub
+3. Importez le repo `Codem-FrontWeb`
+4. Cliquez sur "Deploy" ✨
+
+**C'est tout !** Vercel configure tout automatiquement.
+
+### 🔧 Autres Options
+
+Pour plus de détails sur le déploiement (Render, Netlify, etc.), consultez :
+📖 **[DEPLOIEMENT.md](./DEPLOIEMENT.md)** - Guide complet de déploiement
+
+### Build manuel
 ```bash
 npm run build
 npm start
@@ -158,9 +174,18 @@ MIT License - Libre d'utilisation
 
 ## 🙏 Remerciements
 
-- Inspiré par le design moderne de Bolt.eu
-- Icônes de [Lucide](https://lucide.dev)
-- Composants UI de [Radix UI](https://www.radix-ui.com)
+- Inspiré par le design moderne de [Bolt.eu](https://bolt.eu)
+- Icônes de [Phosphor Icons](https://phosphoricons.com)
+- Composants UI de [Radix UI](https://www.radix-ui.com) et [Shadcn/UI](https://ui.shadcn.com)
+- Animations avec [Framer Motion](https://www.framer.com/motion/)
+
+## 🌍 Contexte Congolais
+
+CODEM est adapté pour le marché congolais :
+- ✅ Tarifs en **Francs CFA (FCFA)**
+- ✅ Références géographiques du **Congo-Brazzaville**
+- ✅ Numéros de téléphone au format congolais
+- ✅ Adaptation culturelle et linguistique
 
 ---
 
